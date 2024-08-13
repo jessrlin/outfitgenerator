@@ -3,43 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- loading fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+NG+Modern:wght@100..400&display=swap" rel="stylesheet">
+   
+    <!-- loading stylesheet -->
     <link rel="stylesheet" href="stylesheet.css">
+    
+    <!-- loading javascript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="script.js"></script>
 
 
 </head>
 <body>
+    <!-- anime.js moving letters -->
     <h1 class="ml11">
         <span class="text-wrapper">
           <span class="line line1"></span>
           <span class="letters">Outfit Generator</span>
         </span>
       </h1>
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-      
+    
+      <nav>
+        <ul>
+            <li><a href="clothes.html">Main Generator</a></li>
+            <li><a href="allitems.html">All items</a></li>
+        </ul>
+    </nav>
     
     <div class="content">
+
+        <!-- loading images-->
         <div class="images">
+            <!-- divided into each section for each top, bottom, shoe + where the photos will be displayed-->
             <div class="section">
                 <h2></h2>
-                <img id="topImg" src="photos/bonnietop.JPG" alt="Top Image">
+                <img id="topImg" alt="Top Image">
             </div>
             <div class="section">
                 <h2></h2>
-                <img id="bottomImg" src="photos/anstasiapant.JPG" alt="Bottom Image">
+                <img id="bottomImg" alt="Bottom Image">
             </div>
             <div class="section">
                 <h2></h2>
-                <img id="shoeImg" src="photos/spezial.JPG" alt="Shoe Image">
+                <img id="shoeImg" alt="Shoe Image">
             </div>
         </div>
+
+        <!-- selecting the outfit-->
         <div class="buttons">
+
             <div class="section">
-                <h2>Tops</h2>
+                <!-- on click = show the image -->
+                <h2>Tops</h2> 
                 <div class="button-group">
                     <button onclick="showImage('topImg', 'photos/bonnietop.JPG')">Top 1</button>
                     <button onclick="showImage('topImg', 'photos/edithlace.JPG')">Top 2</button>
@@ -50,6 +69,8 @@
                     <button onclick="showImage('topImg', 'photos/iamgia.JPG')">Top 7</button>
         
                 </div>
+
+                <!-- dropdown button code (not displayed in full screen)-->
                 <select onchange="showImage('topImg', this.value)">
                     <option selected disabled>Select Top</option>
                     <option value="photos/bonnietop.JPG">Top 1</option>
@@ -60,11 +81,15 @@
                     <option value="photos/orangelace.JPG">Top 6</option>
                     <option value="photos/iamgia.JPG">Top 7</option>
                 </select>
+
+                <!-- Randomise and download buttons (javascript) -->
                 <div class="extra-buttons">
                     <button onclick="randomizeImage('topImg')">Randomize</button>
                     <button onclick="downloadImage('topImg')">Download</button>
                 </div>
-            </div>
+            </div> 
+
+            <!-- same thing for bottoms as tops -->
             <div class="section">
                 <h2>Bottoms</h2>
                 <div class="button-group">
@@ -89,6 +114,8 @@
                     <button onclick="downloadImage('bottomImg')">Download</button>
                 </div>
             </div>
+
+            <!-- same for shoes = buttons, dropdown, randomize/download -->
             <div class="section">
                 <h2>Shoes</h2>
                 <div class="button-group">
@@ -106,9 +133,14 @@
                     <button onclick="randomizeImage('shoeImg')">Randomize</button>
                     <button onclick="downloadImage('shoeImg')">Download</button>
                 </div>
+                <div class="extra-buttons">
+                    <button onclick="randomizeAll()">Randomize All</button>
+                    <button onclick="downloadAll()">Download All</button>
+                </div>
             </div>
         </div>
     </div>
+
     <script>
         const tops = ['photos/bonnietop.JPG', 'photos/edithlace.JPG', 'photos/rafaela.JPG', 'photos/gina.JPG', 'photos/archie.JPG', 'photos/orangelace.JPG', 'photos/iamgia.JPG'];
         const bottoms = ['photos/anstasiapant.JPG', 'photos/hilarypant.JPG', 'photos/keirashorts.JPG', 'photos/gracie.JPG', 'photos/malia.JPG'];
@@ -140,6 +172,21 @@
             link.download = img.src.split('/').pop();
             link.click();
         }
+
+        function randomizeAll() {
+            randomizeImage('topImg');
+            randomizeImage('bottomImg');
+            randomizeImage('shoeImg');
+        }
+
+        function downloadAll() {
+            downloadImage('topImg');
+            downloadImage('bottomImg');
+            downloadImage('shoeImg');
+        }
+
     </script>
+
+    
 </body>
 </html>

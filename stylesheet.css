@@ -6,7 +6,7 @@ body {
     justify-content: flex-start;
     height: 100vh;
     margin: 0;
-    background-color: #fce3e5;
+    background-color: #fff0f1;
 }
 
 h1 { 
@@ -28,7 +28,7 @@ h2 {
   .ml11 .text-wrapper {
     position: relative;
     display: inline-block;
-    padding-top: 1em;
+    padding-top: 0.05em;
     padding-right: 0.05em;
     padding-bottom: 0.15em;
   }
@@ -56,7 +56,7 @@ h2 {
 nav {
     background-color: #ff4b4b;
     padding: 20px;
-    width: 100vw;
+    width: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -90,8 +90,13 @@ nav ul li a:hover {
     display: flex;
     width: 100%;
     height: 100%;
-    margin-top: 80px;
+    margin: 0 auto; /* Center the content horizontally */
 }
+
+.images:first-of-type {
+    margin-top: 50px;
+}
+
 .images {
     width: 50%;
     display: flex;
@@ -110,9 +115,7 @@ nav ul li a:hover {
     width: 200px;
     height: auto;
     margin-left: 20px;
-    border: 1px solid #ddd;
     border-radius: 5px;
-    
 }
 
 
@@ -123,7 +126,6 @@ nav ul li a:hover {
     justify-content: flex-start;
     align-items: flex-start;
     padding: 20px;
-    font-family: "Nunito", sans-serif;;
 }
 
 .buttons .section {
@@ -140,34 +142,47 @@ nav ul li a:hover {
     font-family: "Playwrite NG Modern", cursive;
     font-weight: 200;
 }
+
 .buttons .button-group {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(7, 1fr); /* 7 equal-width columns */
     gap: 10px;
     width: 100%;
-    font-family: "Nunito", sans-serif;
+    height: 100%; /* Ensure the grid container fills the available space */
 }
+
 .buttons .button-group button {
-    background-color: #02005f;
+    background-color: #0f215d;
     color: white;
     border: none;
     padding: 10px 20px;
-    margin: 5px 0;
     cursor: pointer;
     border-radius: 5px;
-    width: 100%;
     text-align: left;
+    font-family: "Nunito", sans-serif;
+    
+    display: flex;
+    align-items: center; /* Vertically center the button text */
+    justify-content: flex-start; /* Align text to the left */
+    height: 100%; /* Make each button fill the full height of the grid cell */
+    width: 100%; /* Ensure the button fills the grid cell horizontally */
 }
+
 .buttons .button-group button:hover {
-    background-color: #87a0ce;
+    background-color: #2f499e;
 }
  .extra-buttons {
     display: flex;
     gap: 10px;
     margin-top: 10px;
 }
+
 .extra-buttons button {
-    background-color: #ff8c9f;
+    font-family: "Nunito", sans-serif;
+}
+
+.extra-buttons button {
+    background-color: #FF5656;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -176,11 +191,11 @@ nav ul li a:hover {
     width: 100px;
 }
 .extra-buttons button:hover {
-    background-color: #ffc0cb;
+    background-color: #FF7878;
 }
 .buttons .section select {
     display: none;
-    background-color: navy;
+    background-color: #0a075a;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -189,6 +204,7 @@ nav ul li a:hover {
     border-radius: 5px;
     width: 100%;
     text-align: left;
+    font-family: "Nunito", sans-serif;
 }
 
 .gallery {
@@ -202,7 +218,6 @@ nav ul li a:hover {
 .gallery img {
     width: 250px;
     height: auto;
-    border: 1px solid #ddd;
     border-radius: 5px;
     transition: transform 0.3s ease-in-out;
 }
@@ -216,6 +231,7 @@ nav ul li a:hover {
     .buttons .button-group {
         grid-template-columns: 1fr;
     }
+    
 
     .ml11 {
         font-size: 3em;
@@ -249,7 +265,7 @@ nav ul li a:hover {
     }
 
     nav ul li {
-        margin: 10px 0; /* Space between items */
+        margin: 10px 0; 
     }
 
 }

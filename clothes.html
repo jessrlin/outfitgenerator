@@ -150,52 +150,6 @@
         </div>
     </div>
 
-    <script>
-        const tops = ['photos/amara.PNG', 'photos/edithlace.PNG', 'photos/rafaela.PNG', 'photos/gina.PNG', 'photos/archie.PNG', 'photos/orangelace.PNG', 'photos/iamgia.PNG'];
-        const bottoms = ['photos/ciara.PNG', 'photos/corinne.PNG', 'photos/stasy.PNG', 'photos/gracie.PNG', 'photos/malia.PNG', 'photos/julie.PNG'];
-        const shoes = ['photos/creamspezial.PNG', 'photos/navyspezial.PNG', 'photos/blackspezial.PNG', 'photos/clementine.PNG', 'photos/OG.PNG', 'photos/reeboks.PNG'];
 
-        function showImage(imgId, src) {
-            const img = document.getElementById(imgId);
-            img.src = src;
-            img.style.display = 'block';
-        }
-
-        function randomizeImage(imgId) {
-            const img = document.getElementById(imgId);
-            let randomSrc = '';
-            if (imgId === 'topImg') {
-                randomSrc = tops[Math.floor(Math.random() * tops.length)];
-            } else if (imgId === 'bottomImg') {
-                randomSrc = bottoms[Math.floor(Math.random() * bottoms.length)];
-            } else if (imgId === 'shoeImg') {
-                randomSrc = shoes[Math.floor(Math.random() * shoes.length)];
-            }
-            showImage(imgId, randomSrc);
-        }
-
-        function downloadImage(imgId) {
-            const img = document.getElementById(imgId);
-            const link = document.createElement('a');
-            link.href = img.src;
-            link.download = img.src.split('/').pop();
-            link.click();
-        }
-
-        function randomizeAll() {
-            randomizeImage('topImg');
-            randomizeImage('bottomImg');
-            randomizeImage('shoeImg');
-        }
-
-        function downloadAll() {
-            downloadImage('topImg');
-            downloadImage('bottomImg');
-            downloadImage('shoeImg');
-        }
-
-    </script>
-
-    
 </body>
 </html>
